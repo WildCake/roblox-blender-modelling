@@ -40,6 +40,10 @@ A collapsed textured triangle fails. A face deliberately sampling a uniform colo
 
 Record each intended stacked set, its texture set, physical scale, orientation and reason. Repeated identical brackets or nondirectional panels can share UV space; asymmetry, text, arrows, unique wear, handed tread and baked lighting can make that incorrect.
 
+For repeated fittings with visible nondirectional wear, prefer varied sampling over exact stacking: offset and rotate each part's chart within the same logical material region so every mounting plate does not display the same stain. Use a stable seed derived from part identity for reproducible builds. Transform complete charts in texture-pixel space, without rescaling or mirroring; fit their rotated bounds inside the usable region with the required gutter. Keep coplanar continuous surfaces continuous. Respect grain, labels, tread direction, baked lighting and normal-map orientation; restrict variation when those features require a specific alignment. Review actual textured repetitions as well as density and stretch.
+
+Apply this variation among authored fittings inside a consolidated motion group. Instances that must share one published mesh also share its UVs: do not create a new MeshId per instance just to randomize wear. Any deliberately authored prototype variants require an explicit asset budget and reuse plan.
+
 Check these cases separately:
 
 | Case | Decision |
