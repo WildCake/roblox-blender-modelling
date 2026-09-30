@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "reference": "The same generated industrial engine concept",
+  "capture": "Separate native Roblox Studio Edit screenshots, identical camera, framing and lighting",
+  "polygon_metric": "Evaluated triangles in the final Blender export groups; installed MeshPart counts verified in Roblox",
+  "duration_scope": "Agent wall time including tool waits; excludes the main agent's publication, installation and comparison captures",
+  "token_scope": "Cumulative input plus output, including repeated context; cached input is a subset of input; reasoning output is a subset of output",
+  "variants": [
+    {
+      "variant": "A",
+      "instructions": "No modelling skill or project rules",
+      "mesh_parts": 7,
+      "triangles": 57050,
+      "duration_ms": 1578979,
+      "input_tokens": 3452219,
+      "cached_input_tokens": 3355136,
+      "output_tokens": 24949,
+      "reasoning_output_tokens": 7738,
+      "total_tokens": 3477168,
+      "uncached_input_plus_output_tokens": 122032
+    },
+    {
+      "variant": "B",
+      "instructions": "Modelling skill and the project's existing texture/import contract",
+      "mesh_parts": 2,
+      "triangles": 16332,
+      "duration_ms": 1227041,
+      "input_tokens": 2236954,
+      "cached_input_tokens": 2165248,
+      "output_tokens": 21335,
+      "reasoning_output_tokens": 5962,
+      "total_tokens": 2258289,
+      "uncached_input_plus_output_tokens": 93041
+    }
+  ]
+}

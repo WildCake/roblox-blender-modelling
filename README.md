@@ -2,6 +2,30 @@
 
 An agent skill for creating and repairing Blender assets destined for Roblox, with particular attention to **UV scale and distortion** and **exporting only meaningful motion groups**.
 
+## Engine comparison: with and without the skill
+
+Two independent **GPT-6.1 Sol** agents, both using **high** reasoning, built an engine from the same generated concept. A was instructed to work without modelling skills or project rules. B followed this modelling skill and the project's texture/import contract. Both final models were imported through the official Roblox Blender add-on.
+
+![Separate three-quarter Roblox renders of the two engines, with geometry, elapsed time and token statistics](assets/engine-comparison/comparison-sheet.png)
+
+[Printable comparison sheet (PDF)](assets/engine-comparison/comparison-sheet.pdf) · Original Roblox captures: [A](assets/engine-comparison/engine-a-roblox.png), [B](assets/engine-comparison/engine-b-roblox.png).
+
+| Metric | A — without skill | B — with skill |
+| --- | ---: | ---: |
+| Separate visible MeshParts in Roblox | 7 | 2 |
+| Polygons, measured as exported triangles | 57,050 | 16,332 |
+| Agent elapsed time | 26 min 19 s | 20 min 27 s |
+| Total tokens, including cached input | 3,477,168 | 2,258,289 |
+| Cached input tokens | 3,355,136 | 2,165,248 |
+| Uncached input + output tokens | 122,032 | 93,041 |
+| Output tokens, including reasoning | 24,949 | 21,335 |
+
+These are separate native Roblox Studio Edit captures with the same three-quarter camera, scale, lighting and background. The comparison sheet only crops and lays out those captures; it does not repaint the models. Triangle counts come from the final evaluated Blender export groups; MeshPart counts were verified after installation in Roblox.
+
+Elapsed time is each agent's wall time, including tool waits. It excludes the main agent's asset publication, installation and comparison captures. Token totals are cumulative input plus output and include repeated context; cached input is already included in the total. The uncached row is a token count, not a monetary cost. [Machine-readable results](assets/engine-comparison/results.json) contain the exact durations and token breakdown.
+
+This is one illustrative pair from **2026-09-30**, with different instruction and texture-reuse constraints. It is not a controlled benchmark, an FPS measurement or gameplay acceptance.
+
 ## What changes the workflow
 
 - Measure texel density in real units and directional stretching, including object scale and rectangular textures.
